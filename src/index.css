@@ -1,3 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply w-[180.13px] h-14 rounded-[10px] border-2 font-source-sans-3 text-xl/[24px] text-center border-solid
+  }
+
+  .btn-purple {
+   @apply text-primary-color border-primary-color shadow-[0_0_12px_4px_rgba(84,3,142,1)_inset]
+   /* box-shadow: 0px 0px 12px 4px #54038e inset; */
+   
+
+   
+   /* border: 2px solid var(--Blue, #2271D1) */
+  }
+}
+
+/* --primary-color: #edff71;
+--secondary-color: #27363d;
+--tertiary-color: #d0efef;
+--white-color: #ffffff; */
+
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

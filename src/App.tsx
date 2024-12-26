@@ -1,9 +1,14 @@
+import Header from "./components/Header";
 
 
 function App() {
   return (
     <>
-      <h1>ALURAFLIX</h1>
+      {/* <Header>
+        
+      </Header> */}
+      {/* <h1 className="text-3xl">ALURAFLIX</h1> */}
+      <Header />
     </>
   );
 }

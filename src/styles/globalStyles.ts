@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    font-size: 62.5%;
+    /* font-size: 62.5%; */
   }
 
   *,
@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
   }
 
   h1,
