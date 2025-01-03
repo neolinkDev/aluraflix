@@ -10,7 +10,7 @@ type BannerProps = {
 function Banner({playerImages}:BannerProps) {
   return (
     <section 
-      className="bg-hero-image bg-no-repeat bg-cover bg-center sm:h-[444px] lg:h-[590px] xl:h-[600px] relative hidden sm:block"
+      className="bg-hero-image bg-no-repeat bg-cover bg-center sm:h-[444px] lg:h-[590px] xl:h-[600px] relative hidden sm:block mb-[106px]"
     > 
       <div className="absolute inset-0 bg-black/50 hidden sm:block">
          

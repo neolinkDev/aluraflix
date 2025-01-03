@@ -9,7 +9,7 @@ type HeaderProps = {
 function Header({children}: HeaderProps) {
   return (
     // <header className="w-[90%] py-6 flex flex-col gap-6 items-center justify-center max-w-screen-xl md:flex-row md:justify-between mx-auto">
-    <header className="h-screen">
+    <header className="">
 
       <nav className="grid py-6 justify-items-center items-center gap-6 w-[90%] max-w-screen-xl mx-auto overflow-hidden sm:grid-flow-col sm:justify-between">
 
