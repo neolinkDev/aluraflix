@@ -1,9 +1,11 @@
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Categories from './components/Categories';
+import VideoCard from './components/VideoCard';
 
 import playerJPG from '/player.jpg';
 import playerAVIF from '/player.avif';
+import videoCardImage from '/videocard-image.jpeg';
 
 const playerImages = {
   jpg: playerJPG,
@@ -22,11 +24,15 @@ function App() {
       <Header>
         <Banner playerImages={playerImages} />
       </Header>
-      {
-        categoriesSection.map((category) => {
-          return <Categories key={category.title} category={category} />
-        })
-      }
+      {categoriesSection.map((category) => {
+        return (
+          <Categories key={category.title} category={category}>
+            <VideoCard videoCardImage={videoCardImage} bgTitle={category.bgTitle} />
+            <VideoCard videoCardImage={videoCardImage} bgTitle={category.bgTitle} />
+            <VideoCard videoCardImage={videoCardImage} bgTitle={category.bgTitle} />
+          </Categories>
+        );
+      })}
     </>
   );
 }
