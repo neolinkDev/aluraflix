@@ -1,24 +1,21 @@
 import Button from './Button';
-import Form from './Form';
 
-type EditFormModalProps = {
-  toggleEditModal: () => void
+type FormProps = {
+  formTitle: string
+  titleColor?: string
+  layout: string
 }
 
-function EditFormModal({toggleEditModal}:EditFormModalProps ) {
+function Form({formTitle, titleColor = "text-[#2271D1]", layout}: FormProps) {
   return (
-    <div className='fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-90'>
-      <section className='relative min-w-[350px] max-w-[974px] border-4 mx-auto w-[90%] max-h-[90vh] overflow-auto py-14 border-[#6BD1FF]'>
+    <>
+      {/* <form className="max-w-xs md:max-w-lg xl:max-w-4xl mx-auto"> */}
+      <form className={`max-w-xs md:max-w-lg ${layout === "horizontal" ? "md:max-w-3xl" : ""} mx-auto w-[90%]`}>
+        <h2 className={`font-source-sans-3 capitalize font-black text-3xl text-center mb-10 ${titleColor} md:text-5xl`}>
+          {formTitle}
+        </h2>
 
-        <Button 
-          className='absolute text-white text-3xl top-5 right-5 select-none'
-          label='X'
-          onClick={toggleEditModal} 
-        />
-
-        <Form formTitle="editar card:" layout='vertical' />
-        {/* <h2 className='uppercase font-black text-3xl text-center mb-10 text-[#2271D1] md:text-6xl'>editar card:</h2>
-        <form className="max-w-xs md:max-w-lg mx-auto">
+        <div className={`grid grid-cols-1 ${layout === "horizontal" ? "md:grid-cols-2" : ""} gap-4`}>
           <div className="mb-5">
             <label
               htmlFor="titulo"
@@ -96,20 +93,21 @@ function EditFormModal({toggleEditModal}:EditFormModalProps ) {
             ></textarea>
           </div>
 
-          <div className="flex flex-col items-center justify-center space-y-4 md:space-y-0 md:flex-row md:space-x-4 font-source-sans-3">
-            <Button
-              label="guardar"
-              className="w-[180px] h-[54px] focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xl px-4 py-2.5 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 uppercase"
-            />
-            <Button
-              label="limpiar"
-              className="w-[180px] h-[54px] py-2.5 px-4 text-xl font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 uppercase"
-            />
-          </div>
-        </form> */}
-      </section>
-    </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center space-y-4 md:space-y-0 md:flex-row md:space-x-4 font-source-sans-3">
+          <Button
+            label="guardar"
+            className="w-[180px] h-[54px] focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xl px-4 py-2.5 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 uppercase"
+          />
+          <Button
+            label="limpiar"
+            className="w-[180px] h-[54px] py-2.5 px-4 text-xl font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 uppercase"
+          />
+        </div>
+      </form>
+    </>
   );
 }
 
-export default EditFormModal;
+export default Form;
