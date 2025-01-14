@@ -27,9 +27,11 @@ function HomePage() {
 
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   
-    const toggleEditModal = () => {
-      setIsEditModalOpen((prevState) => !prevState);
-    };
+  const toggleEditModal = () => {
+    setIsEditModalOpen((prevState) => !prevState);
+  };
+
+ 
 
   return (
     <>
