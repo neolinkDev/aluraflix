@@ -12,6 +12,9 @@ export interface VideoCardData {
 interface VideoContextType {
   videos: VideoCardData[];
   registerVideoCard: (newCardVideo: VideoCardData) => void;
+  isEditModalOpen: boolean; 
+  toggleEditModal: () => void;
+
 }
 
 // context
@@ -23,14 +26,19 @@ export const VideoContext = createContext<VideoContextType | undefined>(
 //
 export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
 
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [videos, setVideos] = useState<VideoCardData[]>([]);
+  
+  const toggleEditModal = () => {
+    setIsEditModalOpen((prevState) => !prevState);
+  };
 
   const registerVideoCard = (newCardVideo: VideoCardData) => {
     setVideos([...videos, newCardVideo]);
   };
 
   return (
-    <VideoContext.Provider value={{ videos, registerVideoCard }}>
+    <VideoContext.Provider value={{ videos, registerVideoCard, isEditModalOpen, toggleEditModal }}>
       {children}
     </VideoContext.Provider>
   );

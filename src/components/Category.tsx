@@ -1,15 +1,23 @@
-type CategoriesSection = {
+import { VideoCardData } from '../context/videoContext';
+// import { VideoCardData } from '../context/videoContext';
+
+import VideoCard from './VideoCard';
+type CategorySection = {
   title: string;
   bgTitle: string;
 };
 
-type PropsCategories = {
-  category: CategoriesSection;
-  children: React.ReactNode;
+type PropsCategory = {
+  category: CategorySection;
+  videos: VideoCardData[]
+  // children: React.ReactNode;
 };
 
 // 24, 32,
-function Categories({ category, children }: PropsCategories) {
+function Category({ category, videos }: PropsCategory) {
+
+  // const { videos } = useVideoContext();
+
   return (
     <section className="max-w-screen-xl w-[90%] mx-auto mb-[93px] md:flex md:flex-col md:justify-center xl:justify-normal">
 
@@ -24,11 +32,14 @@ function Categories({ category, children }: PropsCategories) {
       </div>
 
       <div className="flex justify- xl:justify-start gap-10 overflow-x-auto snap-mandatory pb-10">
-        {children}
+        {
+          videos.map((video, i) => <VideoCard key={i} video={video} bgTitle={category.bgTitle} />)
+        }
+        
       </div>
 
     </section>
   );
 }
 
-export default Categories;
+export default Category;

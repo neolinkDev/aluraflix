@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from './Button';
-import type { VideoCardData } from '../context/videoContext';
+import { useVideoContext, type VideoCardData } from '../context/videoContext';
 
 // export interface VideoCardData {
 //   id?: string
@@ -15,11 +15,13 @@ type FormProps = {
   formTitle: string;
   titleColor?: string;
   layout: string;
-  registerVideoCard?: (newCardVideo: VideoCardData) => void;
+  // registerVideoCard?: (newCardVideo: VideoCardData) => void;
 };
 
 
-function Form({ formTitle, titleColor = 'text-[#2271D1]', layout, registerVideoCard }: FormProps) {
+function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
+
+  const { registerVideoCard } = useVideoContext();
   
   const [titleValue, setTitleValue] = useState('');
   const [categoryValue, setCategoryValue] = useState('');
@@ -37,8 +39,7 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout, registerVideoC
 
   const handleCreateCard = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Video registrado');
-
+    
     const formData: VideoCardData = {
       titleValue,
       categoryValue,
@@ -46,8 +47,10 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout, registerVideoC
       videoValue,
       descriptionValue
     }
-
+    
     if(registerVideoCard) registerVideoCard(formData)
+
+    console.log('Video registrado');
 
     // if(registerVideoCard){
     //   setVideos([...videos, formData])

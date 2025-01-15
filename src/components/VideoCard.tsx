@@ -1,23 +1,29 @@
+import { useVideoContext, VideoCardData } from '../context/videoContext';
 import Button from './Button';
 
 type VideoCardProps = {
-  videoCardImage: string;
+  // videoCardImage: string;
   bgTitle: string;
-  toggleEditModal: () => void;
+  // toggleEditModal: () => void;
+  video: VideoCardData
 };
 
 function VideoCard({
-  videoCardImage,
+  // videoCardImage,
   bgTitle,
-  toggleEditModal,
+  // toggleEditModal,
+  video
 }: VideoCardProps) {
+
+  const { toggleEditModal } = useVideoContext();
+  
   return (
     <div className="w-[373.64px] h-[277.92px]">
       <div className="w-[372.93px] h-[226.66px]">
         <img
           style={{ borderColor: bgTitle }}
           className="w-[372.93px] h-[226.66px] border-[5px]"
-          src={videoCardImage}
+          src={video.imageValue}
           alt="Imagen de videocard"
         />
       </div>
