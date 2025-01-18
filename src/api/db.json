@@ -1,0 +1,44 @@
+{
+  "videos": [
+    {
+      "id": "1",
+      "titleValue": "CUÁNDO USAR LET, VAR Y CONST?",
+      "categoryValue": "frontend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995312/Categories%20Aluraflix/pyncelhrhj7exlgqjuhm.jpg",
+      "videoValue": "https://youtu.be/PztCEdIJITY?si=yVp01aoTQiBuTj-l",
+      "descriptionValue": "¿A veces cuando estás programando sientes dificuldades en saber en qué momento utilizar let, var o const para declarar una variable? En este video te sacamos estas dudas, además de explicarte lo que es escopo global y local en JavaScript."
+    },
+    {
+      "id": "2",
+      "titleValue": "SPRING FRAMEWORK",
+      "categoryValue": "backend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/hrs5eedzjj2jikbujzae.jpg",
+      "videoValue": "https://www.youtube.com/watch?v=t-iqt1b2qqk",
+      "descriptionValue": "¿Busca un framework  para utilizar en sus proyectos? ¿Conoce Spring Framework? Spring es el framework más usado de Java. Nos ofrece herramientas que nos permiten crear proyectos más avanzados, con mejores prácticas y en menor tiempo."
+    },
+    {
+      "id": "9",
+      "titleValue": "¿QUÉ SON LAS SOFT SKILLS?",
+      "categoryValue": "innovación y gestión",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/geo6mfiucpg6pdrvimac.jpg",
+      "videoValue": "https://www.youtube.com/watch?v=vhwspfvI52k",
+      "descriptionValue": "¿Qué son las Softskills y por qué es tan importante desarrollarlas para posicionarse en el mercado laboral? En este video de Alura Tips, Pri Stuani nos habla de las habilidades más buscadas por las empresas en sus profesionales y cómo las Soft Skills te ayudan en el día a día."
+    },
+    {
+      "id": "2053",
+      "titleValue": "¿QUÉ ES SQL Y NOSQL?",
+      "categoryValue": "backend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/x84whljy7kncv4mbpy7m.jpg",
+      "videoValue": "",
+      "descriptionValue": ""
+    },
+    {
+      "id": "1821",
+      "titleValue": "¿QUÉ ES JAVASCRIPT?",
+      "categoryValue": "frontend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/lywfisjjehizl8gokhwo.jpg",
+      "videoValue": "",
+      "descriptionValue": ""
+    }
+  ]
+}

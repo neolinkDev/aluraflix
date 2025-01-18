@@ -1,12 +1,12 @@
 import Form from '../components/Form';
 // import type { VideoCardData } from '../components/Form';
-// import { useVideoContext } from '../context/videoContext';
+import { useVideoContext } from '../context/videoContext';
 
 
 
 const NuevoVideoPage = () => {
 
-  // const {registerVideoCard} = useVideoContext();
+  const {registerVideoCard} = useVideoContext();
  
 
   // const registerVideoCard = (newCardVideo: VideoCardData) => {
@@ -25,9 +25,17 @@ const NuevoVideoPage = () => {
         </p>
       </div>
       <Form
+        initialValues={{
+          titleValue: '',
+          categoryValue: '',
+          imageValue: '',
+          videoValue: '',
+          descriptionValue: '',
+        }}
         formTitle="crear tarjeta"
         titleColor="text-white"
         layout="horizontal"
+        onSubmit={registerVideoCard}
         // registerVideoCard={registerVideoCard}
       />
     </section>

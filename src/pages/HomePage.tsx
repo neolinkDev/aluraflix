@@ -1,15 +1,12 @@
 // import { useState } from 'react';
+import { useVideoContext } from '../context/videoContext';
 
 import Banner from '../components/Banner';
 import EditFormModal from '../components/EditFormModal';
 import Category from '../components/Category';
-// import VideoCard from '../components/VideoCard';
-
-// import videoCardImage from '/videocard-image.jpeg';
 
 import playerJPG from '/player.jpg';
 import playerAVIF from '/player.avif';
-import { useVideoContext } from '../context/videoContext';
 
 const playerImages = {
   jpg: playerJPG,
@@ -25,12 +22,7 @@ const categories = [
 function HomePage() {
 
   const { videos, isEditModalOpen, toggleEditModal } = useVideoContext();
-  // const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
-  // const toggleEditModal = () => {
-  //   setIsEditModalOpen((prevState) => !prevState);
-  // };
-
+  
   return (
     <>
       <Banner playerImages={playerImages} />
@@ -44,21 +36,6 @@ function HomePage() {
             category={category} 
             videos={videos.filter((video)=> video.categoryValue === category.title)} 
           />)  
-        // return (
-        //   <Category key={category.title} category={category}>
-        //     {
-        //       videos.map((video, i) => 
-        //       <VideoCard
-        //         key={i}
-        //         videoCardImage={video.imageValue}
-        //         bgTitle={category.bgTitle}
-        //         toggleEditModal={toggleEditModal}
-        //         video={video}
-        //       /> )
-        //     }
-            
-        //   </Category>
-        // );
       }
     </>
   );

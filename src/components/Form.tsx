@@ -1,61 +1,55 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from './Button';
-import { useVideoContext, type VideoCardData } from '../context/videoContext';
+import { type VideoCardData } from '../context/videoContext';
 
-// export interface VideoCardData {
-//   id?: string
-//   titleValue: string;
-//   categoryValue: string;
-//   imageValue: string;
-//   videoValue: string
-//   descriptionValue: string;
-// }
 
 type FormProps = {
   formTitle: string;
   titleColor?: string;
   layout: string;
+  // onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  onSubmit: (data: VideoCardData) => void;
   // registerVideoCard?: (newCardVideo: VideoCardData) => void;
+  initialValues: VideoCardData
 };
 
 
-function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
+function Form({ formTitle, titleColor = 'text-[#2271D1]', layout, onSubmit, initialValues }: FormProps) {
 
-  const { registerVideoCard } = useVideoContext();
+  // const { registerVideoCard } = useVideoContext();
+
+  const [formData, setFormData] = useState<VideoCardData>(initialValues);
+
+  useEffect(() => {
+    setFormData(initialValues);
+  }, [initialValues]);
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
   
-  const [titleValue, setTitleValue] = useState('');
-  const [categoryValue, setCategoryValue] = useState('');
-  const [imageValue, setImageValue] = useState('');
-  const [videoValue, setVideoValue] = useState('');
-  const [descriptionValue, setDescriptionValue] = useState('');
+  // const [titleValue, setTitleValue] = useState('');
+  // const [categoryValue, setCategoryValue] = useState('');
+  // const [imageValue, setImageValue] = useState('');
+  // const [videoValue, setVideoValue] = useState('');
+  // const [descriptionValue, setDescriptionValue] = useState('');
 
-  // const [videos, setVideos] = useState<VideoCardData[]>([]);
+  // const formData: VideoCardData = {
+  //   titleValue,
+  //   categoryValue,
+  //   imageValue,
+  //   videoValue,
+  //   descriptionValue
+  // }
 
-
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   console.log(e.target.value)
-  //   setTitleValue(e.target.value);
-  // };
-
-  const handleCreateCard = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const formData: VideoCardData = {
-      titleValue,
-      categoryValue,
-      imageValue,
-      videoValue,
-      descriptionValue
-    }
-    
-    if(registerVideoCard) registerVideoCard(formData)
-
-    console.log('Video registrado');
-
-    // if(registerVideoCard){
-    //   setVideos([...videos, formData])
-    // } 
-
+    onSubmit(formData);
   };
 
   return (
@@ -65,7 +59,7 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
         className={`max-w-xs md:max-w-lg ${
           layout === 'horizontal' ? 'md:max-w-4xl' : ''
         } mx-auto w-[90%]`}
-        onSubmit={handleCreateCard}
+        onSubmit={handleSubmit}
       >
         <h2
           className={`font-source-sans-3 capitalize font-black text-3xl text-center mb-10 ${titleColor} md:text-5xl`}
@@ -90,8 +84,9 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
               id="titulo"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="¿qué es JavaScript?"
-              value={titleValue}
-              onChange={(e) => setTitleValue(e.target.value)}
+              name="titleValue"
+              value={formData.titleValue}
+              onChange={handleChange}
             />
           </div>
 
@@ -105,8 +100,9 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
             <select
               id="categoria"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value={categoryValue}
-              onChange={(e) => setCategoryValue(e.target.value)}
+              name="categoryValue"
+              value={formData.categoryValue}
+              onChange={handleChange}
             >
               <option value="" disabled defaultValue="" hidden>Seleccionar categoría</option>
               <option value="frontend">frontend</option>
@@ -127,8 +123,9 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
               id="imagen"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="https://www.google.com/url?sa=i&..."
-              value={imageValue}
-              onChange={(e) => setImageValue(e.target.value)}
+              name="imageValue"
+              value={formData.imageValue}
+              onChange={handleChange}
             />
           </div>
 
@@ -144,8 +141,9 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
               id="video"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="https://www.youtube.com/url?sa=i.."
-              value={videoValue}
-              onChange={(e) => setVideoValue(e.target.value)}
+              name="videoValue"
+              value={formData.videoValue}
+              onChange={handleChange}
             />
           </div>
 
@@ -161,8 +159,9 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout }: FormProps) {
               rows={4}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="lorem ipsum blah blah blah"
-              value={descriptionValue}
-              onChange={(e) => setDescriptionValue(e.target.value)}
+              name='descriptionValue'
+              value={formData.descriptionValue}
+              onChange={handleChange}
             ></textarea>
           </div>
         </div>
