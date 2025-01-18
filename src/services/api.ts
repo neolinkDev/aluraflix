@@ -1,5 +1,4 @@
-import { VideoCardData } from "../context/videoContext";
-
+import { VideoCardData } from '../context/videoContext';
 
 export const API_URL = 'http://localhost:3000';
 
@@ -14,9 +13,9 @@ export const createVideo = async (newCardVideo: VideoCardData) => {
   const response = await fetch(`${API_URL}/videos`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(newCardVideo)
+    body: JSON.stringify(newCardVideo),
   });
   return response.json();
 };
@@ -31,7 +30,7 @@ export const updateVideo = async (id: string, updatedVideo: VideoCardData) => {
   return response.json();
 };
 
-// elimina video 
+// elimina video
 export const deleteVideo = async (id: string) => {
   const response = await fetch(`${API_URL}/videos/${id}`, {
     method: 'DELETE',
@@ -41,6 +40,5 @@ export const deleteVideo = async (id: string) => {
     throw new Error(`Error al eliminar el video con id: ${id}`);
   }
 
-  // return true; 
+  // return true;
 };
-
