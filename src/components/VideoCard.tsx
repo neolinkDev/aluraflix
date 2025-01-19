@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useVideoContext, VideoCardData } from '../context/videoContext';
 import Button from './Button';
 
@@ -20,10 +21,7 @@ function VideoCard({
   const handleDelete = () => {
     const resultado = confirm("¿Estás seguro de que deseas eliminar el video?");
     if (resultado) {
-     
       deleteVideoCard(video.id!)
-      
-     
     } 
   }
   
@@ -34,14 +32,16 @@ function VideoCard({
   
   return (
     <div className="w-[373.64px] h-[277.92px]">
-      <div className="w-[372.93px] h-[226.66px]">
-        <img
-          style={{ borderColor: bgTitle }}
-          className="w-[372.93px] h-[226.66px] border-[5px]"
-          src={video.imageValue}
-          alt="Imagen de videocard"
-        />
-      </div>
+      <Link to={`/${video.id}`}>
+        <div className="w-[372.93px] h-[226.66px]">
+          <img
+            style={{ borderColor: bgTitle }}
+            className="w-[372.93px] h-[226.66px] border-[5px]"
+            src={video.imageValue}
+            alt="Imagen de videocard"
+          />
+        </div>
+      </Link>
 
       <div
         style={{ borderColor: bgTitle }}

@@ -33,20 +33,6 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout, onSubmit, init
     setFormData({ ...formData, [name]: value });
   };
   
-  // const [titleValue, setTitleValue] = useState('');
-  // const [categoryValue, setCategoryValue] = useState('');
-  // const [imageValue, setImageValue] = useState('');
-  // const [videoValue, setVideoValue] = useState('');
-  // const [descriptionValue, setDescriptionValue] = useState('');
-
-  // const formData: VideoCardData = {
-  //   titleValue,
-  //   categoryValue,
-  //   imageValue,
-  //   videoValue,
-  //   descriptionValue
-  // }
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmit(formData);
@@ -54,9 +40,8 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout, onSubmit, init
 
   return (
     <>
-      {/* <form className="max-w-xs md:max-w-lg xl:max-w-4xl mx-auto"> */}
       <form
-        className={`max-w-xs md:max-w-lg ${
+        className={`max-w-xs md:max-w-xl ${
           layout === 'horizontal' ? 'md:max-w-4xl' : ''
         } mx-auto w-[90%]`}
         onSubmit={handleSubmit}
@@ -140,7 +125,7 @@ function Form({ formTitle, titleColor = 'text-[#2271D1]', layout, onSubmit, init
               type="text"
               id="video"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="https://www.youtube.com/url?sa=i.."
+              placeholder="https://www.youtube.com/embed/PztCEdIJITY?si=KwCA8wfZVmZQCYB_"
               name="videoValue"
               value={formData.videoValue}
               onChange={handleChange}
