@@ -8,7 +8,7 @@ type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
 }
 
-const Button = ({label, className, onClick, type}: ButtonProps) => {
+const Button = ({label, className, onClick, type = "button"}: ButtonProps) => {
   return (
     <button
       type={type}

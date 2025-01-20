@@ -23,6 +23,54 @@
       "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/geo6mfiucpg6pdrvimac.jpg",
       "videoValue": "https://www.youtube.com/embed/vhwspfvI52k?si=DKo6Z2XBQYfUCXvp",
       "descriptionValue": "¿Qué son las Softskills y por qué es tan importante desarrollarlas para posicionarse en el mercado laboral? En este video de Alura Tips, Pri Stuani nos habla de las habilidades más buscadas por las empresas en sus profesionales y cómo las Soft Skills te ayudan en el día a día."
+    },
+    {
+      "id": "fd37",
+      "titleValue": "¿Qué es SQL y NoSQL?",
+      "categoryValue": "backend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/x84whljy7kncv4mbpy7m.jpg",
+      "videoValue": "https://www.youtube.com/embed/cLLKVd5CNLc?si=DfqxOYU6d9Ivq9ID",
+      "descriptionValue": "¿Cuáles son las diferencias entre una estructura de datos relacional (SQL) y una no relacional (NoSQL) y cuáles son las principales ventajas de cada una? Álvaro Camacho lo explica en este vídeo."
+    },
+    {
+      "id": "293c",
+      "titleValue": "¿Qué son las metodologias ágiles?",
+      "categoryValue": "innovación y gestión",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/o6vg2dlih1xwr8tkkgal.jpg",
+      "videoValue": "https://www.youtube.com/embed/6N3OkLCfK-0?si=Vs2wQ4BbjUBAS3FL",
+      "descriptionValue": "En este video nuestra invitada, Andyara, nos explicará que són las muy conocidas hoy en día metodologias ágiles y nos comentará un poco sobre como aplicarlas y cuáles son los beneficios de utilizarlas en su equipo o empresa."
+    },
+    {
+      "id": "4bed",
+      "titleValue": "7 Soft Skills más demandadas de 2024",
+      "categoryValue": "innovación y gestión",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995312/Categories%20Aluraflix/ml9q6pbud5syssfsad3k.jpg",
+      "videoValue": "https://www.youtube.com/embed/_-9grhDhxiU?si=flUwesUaTql96bS1",
+      "descriptionValue": "Siempre estamos hablando aquí en el canal de Alura Latam sobre la importancia de las Soft Skills, y en este video vamos a listar las 7 habilidades blandas más demandadas por las empresas en este 2024."
+    },
+    {
+      "id": "6285",
+      "titleValue": "¿Qué es JavaScript?",
+      "categoryValue": "frontend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/lywfisjjehizl8gokhwo.jpg",
+      "videoValue": "https://www.youtube.com/embed/GJfOSoaXk4s?si=CUNn37xc5-ZLjoHp",
+      "descriptionValue": "JavaScript: ¿qué es y cómo se hizo este lenguaje que genera muchas discusiones y debates entre la gente del área de desarrollo? Genesys y Gabriela nos hablan exactamente de esto en este Alura Tips."
+    },
+    {
+      "id": "3bc2",
+      "titleValue": "Simplificando tu código en Java: Conoce los enum",
+      "categoryValue": "backend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/wiq7btqaeygrmchpcrws.jpg",
+      "videoValue": "https://www.youtube.com/embed/EoPvlE85XAQ?si=alTfJDCYYXNCsJDN",
+      "descriptionValue": "¿Escribir muchas variables del tipo constantes en Java te parece un proceso tedioso y que genera muchas líneas de código? \nEn este Alura+ la instructora Génesys Rondón nos enseña a simplificar esta tarea usando un tipo de dato especial llamado enum."
+    },
+    {
+      "id": "0f23",
+      "titleValue": "Equipo Front End",
+      "categoryValue": "frontend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995312/Categories%20Aluraflix/n6lozg6qhv8rds4bqcy4.jpg",
+      "videoValue": "https://www.youtube.com/embed/rpvrLaBQwgg?si=yn76ighMFGuvKIlt",
+      "descriptionValue": "¿Estás empezando tus estudios de Programación? ¿Te interesa todo lo que es la creación de Páginas Web Desarrollo de Softwares? ¿O estás pensando en cambiar de carrera y entrar a la maravillosa area de tecnología?\n\nEn este video, Jeanmarie Quijada, instructora Front End en Alura Latam te explica qué hace el equipo de Front End."
     }
   ]
 }

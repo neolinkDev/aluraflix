@@ -48,16 +48,14 @@ export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
     setIsEditModalOpen((prevState) => !prevState);
   };
 
-  // agregar nuevo video
-  // const registerVideoCard = (newCardVideo: VideoCardData) => {
-  //   setVideos([...videos, newCardVideo]);
-  // };
+  //
   const registerVideoCard = async (newCardVideo: VideoCardData) => {
     const createdVideo = await createVideo(newCardVideo);
     setVideos((prevVideos) => [...prevVideos, createdVideo]);
     console.log('Video registrado');
   };
 
+  //
   const editVideoCard = async (id: string, updatedVideo: VideoCardData) => {
     const editedVideo = await updateVideo(id, updatedVideo);
     setVideos((prevVideos) =>
@@ -65,6 +63,7 @@ export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
     );
   };
 
+  //
   const deleteVideoCard = async (id: string) => {
     await deleteVideo(id);
     setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));

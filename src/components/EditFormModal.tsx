@@ -1,5 +1,3 @@
-// import { useEffect } from 'react';
-// import { useVideoContext } from '../context/videoContext';
 import { useVideoContext, VideoCardData } from '../context/videoContext';
 import Button from './Button';
 import Form from './Form';
@@ -16,21 +14,8 @@ function EditFormModal({toggleEditModal}:EditFormModalProps ) {
 
   const handleEditVideo = (updatedVideo: VideoCardData) => {
     editVideoCard(currentVideo.id!, updatedVideo);
-    // clearVideoToEdit();
     toggleEditModal();
   };
-
-  // const handleEditVideo = (updatedVideo: VideoCardData) => {
-
-  // }
-
-  // useEffect(() => {
-  //   if(currentVideo){
-  //     console.log(currentVideo)
-  //   }
-  // }, [currentVideo])
-  
-  // console.log(currentVideo)
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-90">
@@ -46,6 +31,8 @@ function EditFormModal({toggleEditModal}:EditFormModalProps ) {
           layout="vertical"
           onSubmit={handleEditVideo}
           initialValues={currentVideo}
+          isModal={true}
+          mode="editar"
         />
       </section>
     </div>
