@@ -36,6 +36,7 @@ const NuevoVideoPage = () => {
         titleColor="text-white"
         layout="horizontal"
         onSubmit={registerVideoCard}
+        mode='agregar'
         // registerVideoCard={registerVideoCard}
       />
     </section>
