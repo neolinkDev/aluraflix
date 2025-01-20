@@ -13,7 +13,7 @@ function Player() {
   }
  
   return (
-    <section className='flex flex-col gap-2 max-w-[560px] mx-auto w-[90%]'>
+    <section className='flex flex-col gap-2 max-w-[560px] mx-auto w-[90%] pb-8'>
       <iframe
         width="100%"
         height="315"

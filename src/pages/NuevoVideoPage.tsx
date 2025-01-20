@@ -1,5 +1,4 @@
 import Form from '../components/Form';
-// import type { VideoCardData } from '../components/Form';
 import { useVideoContext } from '../context/videoContext';
 
 
@@ -8,12 +7,6 @@ const NuevoVideoPage = () => {
 
   const {registerVideoCard} = useVideoContext();
  
-
-  // const registerVideoCard = (newCardVideo: VideoCardData) => {
-  //   console.log('Nuevo video', newCardVideo);
-  // };
-
-
   return (
     <section className="mb-16">
       <div className="text-center my-8 text-slate-100 md:my-16">
@@ -37,7 +30,6 @@ const NuevoVideoPage = () => {
         layout="horizontal"
         onSubmit={registerVideoCard}
         mode='agregar'
-        // registerVideoCard={registerVideoCard}
       />
     </section>
   );

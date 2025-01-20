@@ -3,16 +3,12 @@ import { useVideoContext, VideoCardData } from '../context/videoContext';
 import Button from './Button';
 
 type VideoCardProps = {
-  // videoCardImage: string;
   bgTitle: string;
-  // toggleEditModal: () => void;
   video: VideoCardData
 };
 
 function VideoCard({
-  // videoCardImage,
   bgTitle,
-  // toggleEditModal,
   video
 }: VideoCardProps) {
 

@@ -1,18 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
-// import Banner from '../components/Banner';
-
-// import playerJPG from '/player.jpg';
-// import playerAVIF from '/player.avif';
-
-// const playerImages = {
-//   jpg: playerJPG,
-//   avif: playerAVIF,
-// };
-
-// type MainLayoutProps = {
-//   children: React.ReactNode
-// }
+import Footer from '../components/Footer';
 
 function MainLayout() {
   return (
@@ -21,6 +9,7 @@ function MainLayout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }

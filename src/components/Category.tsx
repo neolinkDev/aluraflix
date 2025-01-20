@@ -9,14 +9,10 @@ type CategorySection = {
 type PropsCategory = {
   category: CategorySection;
   videos: VideoCardData[]
-  // children: React.ReactNode;
 };
 
 // 24, 32,
 function Category({ category, videos }: PropsCategory) {
-
-  // const { videos } = useVideoContext();
-  // console.log(videos.length)
 
   return (
     <>

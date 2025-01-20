@@ -18,7 +18,6 @@ function Banner({playerImages}:BannerProps) {
 
           <div className="">
 
-            {/* w-[282px] h-[65px] */}
             <h2 className="inline-block py-3 mb-16 px-[77px] text-center text-3xl text-slate-100 bg-blue-500 font-extrabold rounded-[15px] xl:text-5xl">Front End</h2>
             <h3 className="text-3xl text-slate-100 xl:text-4xl">Challenge React</h3>
             <p className="w-[350px] md:w-[470px] text-slate-100 font-light text-lg/[21.09px]">
@@ -27,7 +26,6 @@ function Banner({playerImages}:BannerProps) {
 
           </div>
 
-          {/* <div className="min-w-[459px] min-h-[236px] "> */}
           <div className="">
             <picture className="">
               <source srcSet={playerImages.avif} type="image/avif" />
