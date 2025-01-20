@@ -1,5 +1,5 @@
 # Challenge AluraGeek 👨‍💻
-Aplicación para gestionar vídeos con funcionalidades CRUD y diseño responsivo.
+Aplicación para gestionar videos con funcionalidades CRUD y diseño responsivo.
 
 ### Captura de pantalla
 ![desktop](https://github.com/user-attachments/assets/018d4847-d7bd-4bd5-8227-2c757dea5881)

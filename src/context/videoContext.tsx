@@ -52,7 +52,7 @@ export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
   const registerVideoCard = async (newCardVideo: VideoCardData) => {
     const createdVideo = await createVideo(newCardVideo);
     setVideos((prevVideos) => [...prevVideos, createdVideo]);
-    console.log('Video registrado');
+    // console.log('Video registrado');
   };
 
   //

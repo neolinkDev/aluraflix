@@ -2,10 +2,10 @@
   "videos": [
     {
       "id": "1",
-      "titleValue": "CUÁNDO USAR LET, VAR Y CONST",
+      "titleValue": "Cuándo usar let, var y const?",
       "categoryValue": "frontend",
       "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995312/Categories%20Aluraflix/pyncelhrhj7exlgqjuhm.jpg",
-      "videoValue": "https://www.youtube.com/embed/PztCEdIJITY?si=SjdoU9CmWWCDSuNC",
+      "videoValue": "https://www.youtube.com/embed/PztCEdIJITY?si=9hcvsZpczF5T--Fc",
       "descriptionValue": "¿A veces cuando estás programando sientes dificuldades en saber en qué momento utilizar let, var o const para declarar una variable? En este video te sacamos estas dudas, además de explicarte lo que es escopo global y local en JavaScript."
     },
     {
@@ -13,7 +13,7 @@
       "titleValue": "SPRING FRAMEWORK",
       "categoryValue": "backend",
       "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/hrs5eedzjj2jikbujzae.jpg",
-      "videoValue": "https://www.youtube.com/embed/t-iqt1b2qqk?si=zmZZmo2eSW-A2bRr",
+      "videoValue": "https://www.youtube.com/watch?v=t-iqt1b2qqk",
       "descriptionValue": "¿Busca un framework  para utilizar en sus proyectos? ¿Conoce Spring Framework? Spring es el framework más usado de Java. Nos ofrece herramientas que nos permiten crear proyectos más avanzados, con mejores prácticas y en menor tiempo."
     },
     {
@@ -21,56 +21,56 @@
       "titleValue": "¿QUÉ SON LAS SOFT SKILLS?",
       "categoryValue": "innovación y gestión",
       "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/geo6mfiucpg6pdrvimac.jpg",
-      "videoValue": "https://www.youtube.com/embed/vhwspfvI52k?si=DKo6Z2XBQYfUCXvp",
+      "videoValue": "https://www.youtube.com/watch?v=vhwspfvI52k",
       "descriptionValue": "¿Qué son las Softskills y por qué es tan importante desarrollarlas para posicionarse en el mercado laboral? En este video de Alura Tips, Pri Stuani nos habla de las habilidades más buscadas por las empresas en sus profesionales y cómo las Soft Skills te ayudan en el día a día."
     },
     {
-      "id": "fd37",
-      "titleValue": "¿Qué es SQL y NoSQL?",
-      "categoryValue": "backend",
-      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/x84whljy7kncv4mbpy7m.jpg",
-      "videoValue": "https://www.youtube.com/embed/cLLKVd5CNLc?si=DfqxOYU6d9Ivq9ID",
-      "descriptionValue": "¿Cuáles son las diferencias entre una estructura de datos relacional (SQL) y una no relacional (NoSQL) y cuáles son las principales ventajas de cada una? Álvaro Camacho lo explica en este vídeo."
-    },
-    {
-      "id": "293c",
-      "titleValue": "¿Qué son las metodologias ágiles?",
-      "categoryValue": "innovación y gestión",
-      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/o6vg2dlih1xwr8tkkgal.jpg",
-      "videoValue": "https://www.youtube.com/embed/6N3OkLCfK-0?si=Vs2wQ4BbjUBAS3FL",
-      "descriptionValue": "En este video nuestra invitada, Andyara, nos explicará que són las muy conocidas hoy en día metodologias ágiles y nos comentará un poco sobre como aplicarlas y cuáles son los beneficios de utilizarlas en su equipo o empresa."
-    },
-    {
-      "id": "4bed",
-      "titleValue": "7 Soft Skills más demandadas de 2024",
-      "categoryValue": "innovación y gestión",
-      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995312/Categories%20Aluraflix/ml9q6pbud5syssfsad3k.jpg",
-      "videoValue": "https://www.youtube.com/embed/_-9grhDhxiU?si=flUwesUaTql96bS1",
-      "descriptionValue": "Siempre estamos hablando aquí en el canal de Alura Latam sobre la importancia de las Soft Skills, y en este video vamos a listar las 7 habilidades blandas más demandadas por las empresas en este 2024."
-    },
-    {
-      "id": "6285",
+      "id": "1821",
       "titleValue": "¿Qué es JavaScript?",
       "categoryValue": "frontend",
       "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/lywfisjjehizl8gokhwo.jpg",
-      "videoValue": "https://www.youtube.com/embed/GJfOSoaXk4s?si=CUNn37xc5-ZLjoHp",
+      "videoValue": "https://www.youtube.com/embed/GJfOSoaXk4s?si=EBJTilnpEFp-ViZ7",
       "descriptionValue": "JavaScript: ¿qué es y cómo se hizo este lenguaje que genera muchas discusiones y debates entre la gente del área de desarrollo? Genesys y Gabriela nos hablan exactamente de esto en este Alura Tips."
     },
     {
-      "id": "3bc2",
-      "titleValue": "Simplificando tu código en Java: Conoce los enum",
-      "categoryValue": "backend",
-      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/wiq7btqaeygrmchpcrws.jpg",
-      "videoValue": "https://www.youtube.com/embed/EoPvlE85XAQ?si=alTfJDCYYXNCsJDN",
-      "descriptionValue": "¿Escribir muchas variables del tipo constantes en Java te parece un proceso tedioso y que genera muchas líneas de código? \nEn este Alura+ la instructora Génesys Rondón nos enseña a simplificar esta tarea usando un tipo de dato especial llamado enum."
-    },
-    {
-      "id": "0f23",
+      "id": "ad45",
       "titleValue": "Equipo Front End",
       "categoryValue": "frontend",
       "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995312/Categories%20Aluraflix/n6lozg6qhv8rds4bqcy4.jpg",
-      "videoValue": "https://www.youtube.com/embed/rpvrLaBQwgg?si=yn76ighMFGuvKIlt",
+      "videoValue": "https://www.youtube.com/embed/rpvrLaBQwgg?si=TrWCNSicCD_9uGZU",
       "descriptionValue": "¿Estás empezando tus estudios de Programación? ¿Te interesa todo lo que es la creación de Páginas Web Desarrollo de Softwares? ¿O estás pensando en cambiar de carrera y entrar a la maravillosa area de tecnología?\n\nEn este video, Jeanmarie Quijada, instructora Front End en Alura Latam te explica qué hace el equipo de Front End."
+    },
+    {
+      "id": "94c9",
+      "titleValue": "¿Qué es SQL y NoSQL?",
+      "categoryValue": "backend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/x84whljy7kncv4mbpy7m.jpg",
+      "videoValue": "https://www.youtube.com/embed/cLLKVd5CNLc?si=4E9gF8KwRkE4nySq",
+      "descriptionValue": "¿Cuáles son las diferencias entre una estructura de datos relacional (SQL) y una no relacional (NoSQL) y cuáles son las principales ventajas de cada una? Álvaro Camacho lo explica en este vídeo."
+    },
+    {
+      "id": "16b2",
+      "titleValue": "Simplificando tu código en Java: Conoce los enum",
+      "categoryValue": "backend",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/wiq7btqaeygrmchpcrws.jpg",
+      "videoValue": "https://www.youtube.com/embed/EoPvlE85XAQ?si=ei8izs6y1gwED8TQ",
+      "descriptionValue": "¿Escribir muchas variables del tipo constantes en Java te parece un proceso tedioso y que genera muchas líneas de código? \nEn este Alura+ la instructora Génesys Rondón nos enseña a simplificar esta tarea usando un tipo de dato especial llamado enum."
+    },
+    {
+      "id": "660a",
+      "titleValue": "7 Soft Skills más demandadas de 2024",
+      "categoryValue": "innovación y gestión",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995312/Categories%20Aluraflix/ml9q6pbud5syssfsad3k.jpg",
+      "videoValue": "https://www.youtube.com/embed/_-9grhDhxiU?si=D8YB97nN3Msk1NWv",
+      "descriptionValue": "Siempre estamos hablando aquí en el canal de Alura Latam sobre la importancia de las Soft Skills, y en este video vamos a listar las 7 habilidades blandas más demandadas por las empresas en este 2024."
+    },
+    {
+      "id": "4571",
+      "titleValue": "¿Qué son las metodologias ágiles?",
+      "categoryValue": "innovación y gestión",
+      "imageValue": "https://res.cloudinary.com/dilteafq8/image/upload/v1736995313/Categories%20Aluraflix/o6vg2dlih1xwr8tkkgal.jpg",
+      "videoValue": "https://www.youtube.com/embed/6N3OkLCfK-0?si=RBTJod92yWI3GOuR",
+      "descriptionValue": "En este video nuestra invitada, Andyara, nos explicará que són las muy conocidas hoy en día metodologias ágiles y nos comentará un poco sobre como aplicarlas y cuáles son los beneficios de utilizarlas en su equipo o empresa."
     }
   ]
 }
