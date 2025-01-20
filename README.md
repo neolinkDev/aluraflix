@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Challenge AluraGeek 👨‍💻
+Aplicación para gestionar vídeos con funcionalidades CRUD y diseño responsivo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Captura de pantalla
+![desktop](https://github.com/user-attachments/assets/018d4847-d7bd-4bd5-8227-2c757dea5881)
+![mobile](https://github.com/user-attachments/assets/4b5581a1-9460-4430-869f-8587420f4d5d)
 
-Currently, two official plugins are available:
+---
+### Herramientas utilizadas🛠️
+* React 18 + TypeScript
+  - React Router DOM
+  - Hooks useState, useEffect, useParams, useNavigate
+  - Context
+* CSS
+  - Tailwind CSS
+* HTML
+* json-server
+  - Implementación de los métodos GET, POST PUT y DELETE
+  -  Fetch API
+* Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
+---
+### Instalación⚙️
+Abrir terminal y clonar repositorio:
 ```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+git clone git@github.com:neolinkDev/aluraflix.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
+Acceder a la carpeta de la App:
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+cd aluraflix
 ```
+
+Instalar dependencias:
+```js
+npm i
+```
+Abrir en VSC:
+```js
+code .
+```
+Levantar servidor de json-server:
+```js  
+json-server src/api/db.json --watch       
+```
+Levantar servidor Vite:
+```js  
+npm run dev    
+
+➜  Local:   http://localhost:5173/
+
+```
+Abrir en el navegador de su elección.
