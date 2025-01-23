@@ -18,7 +18,7 @@ export default {
         "hero-image": "url('/hero-image.webp')",
       },
       boxShadow: {
-        'custom-inset': '0 0 17px 8px #6BD1FF inset', // Agrega tu sombra personalizada
+        'custom-inset': '0 0 17px 8px #6BD1FF inset',
       },
 
     },
