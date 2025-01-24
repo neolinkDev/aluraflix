@@ -1,9 +1,11 @@
-// import { useState } from 'react';
+
 import { useVideoContext } from '../context/videoContext';
 
 import Banner from '../components/Banner';
 import EditFormModal from '../components/EditFormModal';
 import Category from '../components/Category';
+
+import { categories } from '../constants/categories';
 
 import playerJPG from '/player.jpg';
 import playerAVIF from '/player.avif';
@@ -13,11 +15,7 @@ const playerImages = {
   avif: playerAVIF,
 };
 
-const categories = [
-  { title: 'frontend', bgTitle: '#6BD1FF' },
-  { title: 'backend', bgTitle: '#00C86F' },
-  { title: 'innovación y gestión', bgTitle: '#FFBA05' },
-];
+
 
 function HomePage() {
 
@@ -27,7 +25,9 @@ function HomePage() {
     <>
       <Banner playerImages={playerImages} />
       
-      {isEditModalOpen && <EditFormModal toggleEditModal={toggleEditModal} />}
+      {
+        isEditModalOpen && <EditFormModal toggleEditModal={toggleEditModal} />
+      }
 
       {
         categories.map((category) => 

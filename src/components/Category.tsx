@@ -1,6 +1,6 @@
 import { VideoCardData } from '../context/videoContext';
-
 import VideoCard from './VideoCard';
+
 type CategorySection = {
   title: string;
   bgTitle: string;
@@ -11,7 +11,6 @@ type PropsCategory = {
   videos: VideoCardData[]
 };
 
-// 24, 32,
 function Category({ category, videos }: PropsCategory) {
 
   return (
