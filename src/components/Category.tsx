@@ -16,7 +16,7 @@ function Category({ category, videos }: PropsCategory) {
   return (
     <>
       {
-        videos.length > 0 && <section className="max-w-screen-xl w-[90%] mx-auto mb-[93px] md:flex md:flex-col md:justify-center xl:justify-normal">
+        videos.length > 0 && <section className="max-w-screen-xl w-[90%] mx-auto mt-[93px] md:mt-0 mb-[93px] md:flex md:flex-col md:justify-center xl:justify-normal">
 
         <div className="md:flex md:justify-center xl:justify-start">
           <h3

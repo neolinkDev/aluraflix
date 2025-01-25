@@ -24,8 +24,11 @@ function Form({
 }: FormProps) {
  
   const [formData, setFormData] = useState<VideoCardData>(initialValues);
-  const [error, setError] = useState(false);
-  const [errorVideoURL, setErrorVideoURL] = useState(false);
+  const [errors, setErrors] = useState<{ form: boolean; videoURL: boolean }>({
+    form: false,
+    videoURL: false,
+  });
+  
 
   const navigate = useNavigate();
 
@@ -48,20 +51,29 @@ function Form({
     // validando form
     if (Object.values(formData).includes('')) {
       // console.log('todos los campos son obligatorios')
-      setError(true);
+      setErrors({
+        ...errors,
+        form: true
+      });
       return;
     }
-    setError(false);
+    // setError(false);
 
     // Validar URL embebida de YouTube 
     const youtubeEmbedRegex =
       /^https:\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9_-]+(\?.*)?$/;
     if (!youtubeEmbedRegex.test(formData.videoValue)) {
-      setErrorVideoURL(true);
+      setErrors({
+        ...errors,
+        videoURL: true
+      });
       return;
     }
 
-    setErrorVideoURL(false);
+    setErrors({ 
+      form: false, 
+      videoURL: false 
+    });
 
     onSubmit(formData);
 
@@ -88,7 +100,7 @@ function Form({
           {formTitle}
         </h2>
 
-        {error && (
+        {errors.form && (
           <p className="bg-red-500 text-slate-100 text-center uppercase font-bold mb-4">
             Todos los campos son obligatorios
           </p>
@@ -174,7 +186,7 @@ function Form({
               value={formData.videoValue}
               onChange={handleChange}
             />
-            {errorVideoURL && (
+            {errors.videoURL && (
               <div className="text-xs mt-1 bg-red-500 text-slate-100 text-center">
                 <span>
                   Ingresa una URL válida de YouTube embebida
