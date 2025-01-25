@@ -1,10 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { useVideoContext } from '../context/videoContext';
+import { useEffect } from 'react';
 
 
 function Player() {
   const { videos } = useVideoContext();
   const params = useParams<{ id: string }>(); 
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll al tope al montar el componente
+  }, []);
 
   const video = videos.find((video) => video.id === params.id);
  
@@ -13,7 +18,7 @@ function Player() {
   }
  
   return (
-    <section className='flex flex-col gap-2 max-w-[560px] mx-auto w-[90%] pb-8'>
+    <section className='flex flex-col gap-2 max-w-[560px] mx-auto w-[90%] pb-8 pt-8'>
       <iframe
         width="100%"
         height="315"

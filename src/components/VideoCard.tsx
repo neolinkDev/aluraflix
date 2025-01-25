@@ -32,7 +32,7 @@ function VideoCard({
         <div className="w-[372.93px] h-[226.66px]">
           <img
             style={{ borderColor: bgTitle }}
-            className="w-[372.93px] h-[226.66px] border-[5px]"
+            className="w-[372.93px] h-[226.66px] border-[5px] rounded-tl-3xl rounded-tr-3xl"
             src={video.imageValue}
             alt="Imagen de videocard"
           />
@@ -41,7 +41,7 @@ function VideoCard({
 
       <div
         style={{ borderColor: bgTitle }}
-        className="w-[372.77px] h-[51.27px] flex items-center justify-center gap-9 text-white uppercase font-extrabold bg-black border-r-[5px] border-l-[5px] border-b-[5px]"
+        className="w-[372.77px] h-[51.27px] flex items-center justify-center gap-9 text-white uppercase font-extrabold bg-black border-r-[5px] border-l-[5px] border-b-[5px] rounded-bl-3xl rounded-br-3xl"
       >
         <Button  
           onClick={handleDelete}
