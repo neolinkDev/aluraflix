@@ -12,7 +12,8 @@ function AppRouter() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="nuevo-video" element={<NuevoVideoPage />} />
-        <Route path=":id" element={<Player />}></Route>
+        <Route path="not-found" element={<NotFoundPage />} />
+        <Route path=":id" element={<Player />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

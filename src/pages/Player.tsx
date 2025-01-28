@@ -1,21 +1,33 @@
 import { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useVideoContext } from '../context/videoContext';
-import { useParams } from 'react-router-dom';
 
 
 function Player() {
   const { videos } = useVideoContext();
   const params = useParams<{ id: string }>(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll al tope al montar el componente
   }, []);
-
+  
   const video = videos.find((video) => video.id === params.id);
+
+  // Redirigir si el video no existe
+  useEffect(() => {
+    // Redirige y reemplaza la entrada del historial, `replace: true` evita que el usuario pueda volver a la URL inválida.
+    if (!video) {
+      navigate('/not-found', { replace: true }); 
+    }
+  }, [video, navigate]);
  
   if (!video) {
-    return <p className='text-slate-100 text-center'>Video no encontrado</p>;
+    return null;
   }
+  // if (!video) {
+  //   return <p className='text-slate-100 text-center'>Video no encontrado</p>;
+  // }
  
   return (
     <section className='flex flex-col gap-2 max-w-[560px] mx-auto w-[90%] pb-8 pt-8'>
