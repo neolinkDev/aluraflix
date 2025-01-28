@@ -1,4 +1,4 @@
-import { VideoCardData } from '../context/videoContext';
+import { useVideoContext, VideoCardData } from '../context/videoContext';
 import VideoCard from './VideoCard';
 
 type CategorySection = {
@@ -12,6 +12,14 @@ type PropsCategory = {
 };
 
 function Category({ category, videos }: PropsCategory) {
+
+  const { isError } = useVideoContext();
+
+  if (isError) return ( 
+    <div className="text-slate-50">
+      {isError} {/* Mensaje lanzado desde el servicio */}
+    </div>
+  );
 
   return (
     <>

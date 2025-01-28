@@ -32,7 +32,7 @@ function EditFormModal({toggleEditModal}:EditFormModalProps ) {
           onSubmit={handleEditVideo}
           initialValues={currentVideo}
           isModal={true}
-          mode="editar"
+          // mode="editar"
         />
       </section>
     </div>

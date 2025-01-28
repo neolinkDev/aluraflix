@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
-import { type VideoCardData } from '../context/videoContext';
+import { useVideoContext, type VideoCardData } from '../context/videoContext';
 
 type FormProps = {
   formTitle: string;
   titleColor?: string;
   layout: string; // onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-  onSubmit: (data: VideoCardData) => void;
+  onSubmit: (data: VideoCardData) => Promise<boolean> | void;
   initialValues: VideoCardData;
   isModal?: boolean;
-  mode: 'agregar' | 'editar';
+  mode?: 'agregar' | 'editar';
 };
 
 function Form({
@@ -20,16 +20,16 @@ function Form({
   onSubmit,
   initialValues,
   isModal = false,
-  mode = 'agregar'
+  // mode = 'agregar'
 }: FormProps) {
  
+  const { isError } = useVideoContext();
   const [formData, setFormData] = useState<VideoCardData>(initialValues);
   const [errors, setErrors] = useState<{ form: boolean; videoURL: boolean }>({
     form: false,
     videoURL: false,
   });
   
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function Form({
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // validando form
@@ -57,7 +57,6 @@ function Form({
       });
       return;
     }
-    // setError(false);
 
     // Validar URL embebida de YouTube 
     const youtubeEmbedRegex =
@@ -75,15 +74,24 @@ function Form({
       videoURL: false 
     });
 
-    onSubmit(formData);
-
-    if (mode === 'agregar') {
-      alert('Video agregado correctamente');
-    } else if (mode === 'editar') {
-      alert('Video editado correctamente');
+    // onSubmit = registerVideoCard
+    const isSuccess = await onSubmit(formData); 
+  
+    if (isSuccess) {
+      // alert(mode === 'agregar' ? 'Video agregado' : 'Video editado');
+      alert('Video agregado');
+      navigate('/');
     }
 
-    navigate('/');
+    // onSubmit(formData);
+
+    // if (mode === 'agregar') {
+    //   alert('Video agregado correctamente');
+    // } else if (mode === 'editar') {
+    //   alert('Video editado correctamente');
+    // }
+
+    // navigate('/');
   };
 
   return (
@@ -99,6 +107,15 @@ function Form({
         >
           {formTitle}
         </h2>
+
+        {/* Mostrar error del contexto */}
+        {
+          isError && (
+            <p className="text-yellow-200 text-center uppercase font-bold mb-4">
+              { isError }
+            </p>
+          )
+        }
 
         {errors.form && (
           <p className="bg-red-500 text-slate-100 text-center uppercase font-bold mb-4">

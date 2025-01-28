@@ -12,13 +12,14 @@ export interface VideoCardData {
 
 interface VideoContextType {
   videos: VideoCardData[];
-  registerVideoCard: (newCardVideo: VideoCardData) => void;
-  editVideoCard: (id: string, updatedVideo: VideoCardData) => void;
+  registerVideoCard: (data: VideoCardData) => Promise<boolean>;
+  editVideoCard: (id: string, updatedVideo: VideoCardData) => Promise<boolean>;
   deleteVideoCard: (id: string) => void
   isEditModalOpen: boolean; 
   toggleEditModal: () => void;
   currentVideo: VideoCardData | null;
   setCurrentVideo: (video: VideoCardData | null) => void;
+  isError: string | null
 }
 
 // context
@@ -33,12 +34,22 @@ export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [videos, setVideos] = useState<VideoCardData[]>([]);
   const [currentVideo, setCurrentVideo] = useState<VideoCardData | null>(null);
+  const [isError, setIsError] = useState<string | null>(null);
 
   // obtiene los videos
   useEffect(() => {
     const getVideos = async () => {
-      const videos = await fetchVideos();
-      setVideos(videos);
+
+      try {
+        const videos = await fetchVideos();
+        setVideos(videos);
+        
+      } catch (error) {
+        const message = error instanceof Error 
+          ? error.message 
+          : "Error desconocido";
+        setIsError(message);
+      }
     };
     getVideos();
   }, []);
@@ -50,17 +61,52 @@ export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
 
   //
   const registerVideoCard = async (newCardVideo: VideoCardData) => {
-    const createdVideo = await createVideo(newCardVideo);
-    setVideos((prevVideos) => [...prevVideos, createdVideo]);
-    // console.log('Video registrado');
+
+    try {
+      setIsError(null);
+      const createdVideo = await createVideo(newCardVideo);
+      setVideos((prevVideos) => [...prevVideos, createdVideo]);
+     
+      return true;
+      
+    } catch (error) {
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Error al crear el video';
+       
+      setIsError(errorMessage);
+
+      return false;
+    }
+    
   };
 
   //
   const editVideoCard = async (id: string, updatedVideo: VideoCardData) => {
-    const editedVideo = await updateVideo(id, updatedVideo);
-    setVideos((prevVideos) =>
-      prevVideos.map((video) => (video.id === id ? editedVideo : video))
-    );
+
+    try {
+
+      setIsError(null);
+      
+      const editedVideo = await updateVideo(id, updatedVideo);
+  
+      setVideos((prevVideos) =>
+        prevVideos.map((video) => (video.id === id ? editedVideo : video))
+      );
+
+      alert('Video actualizado correctamente');
+
+      return true;
+    } catch (error) {
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Error al actualizar video';
+       
+      setIsError(errorMessage);
+
+      return false;
+    }
+    
   };
 
   //
@@ -68,7 +114,6 @@ export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
     await deleteVideo(id);
     setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));
   };
-
 
   return (
     <VideoContext.Provider
@@ -81,6 +126,7 @@ export const VideoProvider = ({ children }: {children: React.ReactNode}) => {
         toggleEditModal,
         currentVideo,
         setCurrentVideo,
+        isError
       }}
     >
       {children}

@@ -1,6 +1,6 @@
-import { useParams } from 'react-router-dom';
-import { useVideoContext } from '../context/videoContext';
 import { useEffect } from 'react';
+import { useVideoContext } from '../context/videoContext';
+import { useParams } from 'react-router-dom';
 
 
 function Player() {
