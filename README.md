@@ -54,4 +54,4 @@ npm run dev
 ```
 Abrir en el navegador de su elección.
 
-<!-- 🔗[DEMO](https://aluraflix-jr.netlify.app/) -->
+<!-- 🔗[DEMO](https://aluraflix-jr.vercel.app/) -->
