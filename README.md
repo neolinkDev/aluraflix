@@ -16,7 +16,9 @@ Aplicación para gestionar videos con funcionalidades CRUD y diseño responsivo.
 * HTML
 * json-server
   - Implementación de los métodos GET, POST PUT y DELETE
-  -  Fetch API
+  - Fetch API
+* Backend
+  - https://mockapi.io
 * Vite
 
 ---
@@ -51,3 +53,5 @@ npm run dev
 
 ```
 Abrir en el navegador de su elección.
+
+<!-- 🔗[DEMO](https://aluraflix-jr.netlify.app/) -->
