@@ -78,20 +78,9 @@ function Form({
     const isSuccess = await onSubmit(formData); 
   
     if (isSuccess) {
-      // alert(mode === 'agregar' ? 'Video agregado' : 'Video editado');
       alert('Video agregado');
       navigate('/');
     }
-
-    // onSubmit(formData);
-
-    // if (mode === 'agregar') {
-    //   alert('Video agregado correctamente');
-    // } else if (mode === 'editar') {
-    //   alert('Video editado correctamente');
-    // }
-
-    // navigate('/');
   };
 
   return (
