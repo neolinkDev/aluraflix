@@ -1,23 +1,19 @@
-import { Route, Routes } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
+import MainLayout from '../components/MainLayout';
+import HomePage from '../routes/HomePage';
+import NuevoVideoPage from '../routes/NuevoVideoPage';
+import VideoDetailsPage from '../routes/VideoDetailsPage';
+import NotFoundPage from '../routes/NotFoundPage';
 
-import MainLayout from '../layout/MainLayout';
-import HomePage from '../pages/HomePage';
-import NuevoVideoPage from '../pages/NuevoVideoPage';
-import Player from '../pages/Player';
-import NotFoundPage from '../pages/NotFoundPage';
-
-function AppRouter() {
-  return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="nuevo-video" element={<NuevoVideoPage />} />
-        <Route path="not-found" element={<NotFoundPage />} />
-        <Route path=":id" element={<Player />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
-  );
-}
-
-export default AppRouter;
+export const AppRouter = createBrowserRouter([
+  {
+    element: <MainLayout />,
+    children: [
+      { path: '/', element: <HomePage /> },
+      { path: '/nuevo-video', element: <NuevoVideoPage /> },
+      { path: '/editar/:id', element: <NuevoVideoPage /> },
+      { path: '/videos/:id', element: <VideoDetailsPage /> },
+      { path: '*', element: <NotFoundPage /> }
+    ],
+  },
+]);

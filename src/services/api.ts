@@ -1,88 +1,87 @@
-import { VideoCardData } from '../context/videoContext';
 
-// export const API_URL = 'http://localhost:3000';
-export const API_URL ='https://679824fcc2c861de0c6ef76c.mockapi.io/videos';
+// const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL ='https://67acf0643f5a4e1477dc6207.mockapi.io/videos';
 
-// fetching de la data
-export const fetchVideos = async (): Promise<VideoCardData[]> => {
+export interface Video {
+  id?: string;
+  title: string;
+  category: string;
+  imageURL: string;
+  videoURL: string;
+  description: string;
+}
 
+// fetching videos
+export const getVideos = async (): Promise<Video[]> => {
   try {
-    // const response = await fetch(`${API_URL}/videos`);
-    const response = await fetch(`${API_URL}`);
-
-    if(!response.ok){
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Error en la solicitud');
-    }
-
-    return response.json();
-    
+    // const response = await fetch(`${API_BASE_URL}/videos`);
+    const response = await fetch(`${API_BASE_URL}`);
+    if (!response.ok) throw new Error('Error al cargar videos');
+    return await response.json();
   } catch (error) {
-    console.error('Error en fetchVideos:', error);
-    throw error;      
+    console.error(error);
+    throw error;
   }
 };
 
-// agrega nuevo video
-export const createVideo = async (newCardVideo: VideoCardData) => {
-  // throw new Error("Error al crear el video");
+// crea nuevo video
+// export const createVideo= async (user: Omit<Video, 'id'>): Promise<Video> => {
+export const createVideo= async (newVideo: Video): Promise<Video> => {
   try {
-    
-    // const response = await fetch(`${API_URL}/videos`, {
-    const response = await fetch(`${API_URL}`, {
+    // const response = await fetch(`${API_BASE_URL}/videos`, {
+    const response = await fetch(`${API_BASE_URL}`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newCardVideo),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Error al crear el video');
-    }
-
-    return response.json();
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newVideo),
+    })
+    if (!response.ok) throw new Error('Error al crear video')
+    return await response.json()
   } catch (error) {
-    console.error('Error en createVideo:', error);
-    throw error; 
+    console.error(error);
+    throw error;
   }
-};
+}
+
+// obtiene el video a actualizar mediante su ID
+export const getVideo = async (id: string): Promise<Video> => {
+  try {
+    // const response = await fetch(`${API_BASE_URL}/videos/${id}`)
+    const response = await fetch(`${API_BASE_URL}/${id}`)
+    if (!response.ok) throw new Error('Video no encontrado')
+    return await response.json()
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
 
 // actualiza video previamente agregado
-export const updateVideo = async (id: string, updatedVideo: VideoCardData) => {
-
+export const updateVideo = async (id: string, video: Video): Promise<Video> => {
   try {
-    
-    // const response = await fetch(`${API_URL}/videos/${id}`, {
-    const response = await fetch(`${API_URL}/${id}`, {
+    // const response = await fetch(`${API_BASE_URL}/videos/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatedVideo),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Error al actualizar el video');
-    }
-
-    return response.json();
+      body: JSON.stringify(video),
+    })
+    if (!response.ok) throw new Error('Error al actualizar video')
+    return await response.json()
   } catch (error) {
-    console.error('Error en updateVideo:', error);
-    throw error; 
+    console.error(error);
+    throw error;
   }
-};
+}
 
-// elimina video
-export const deleteVideo = async (id: string) => {
-  // const response = await fetch(`${API_URL}/videos/${id}`, {
-  const response = await fetch(`${API_URL}/${id}`, {
-    method: 'DELETE',
-  });
-
-  if (!response.ok) {
-    throw new Error(`Error al eliminar el video con id: ${id}`);
+// uso del verbo `DELETE` para borrar la card de video
+export const deleteVideo = async (id: string): Promise<void> => {
+  try {
+    // const response = await fetch(`${API_BASE_URL}/videos/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/${id}`, {
+      method: 'DELETE',
+    })
+    if (!response.ok) throw new Error('Error al borrar card')
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
-
-  // return true;
-};
+}

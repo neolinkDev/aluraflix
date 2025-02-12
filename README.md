@@ -10,7 +10,6 @@ Aplicación para gestionar videos con funcionalidades CRUD y diseño responsivo.
 * React 18 + TypeScript
   - React Router DOM
   - Hooks useState, useEffect, useParams, useNavigate
-  - Context
 * CSS
   - Tailwind CSS
 * HTML
