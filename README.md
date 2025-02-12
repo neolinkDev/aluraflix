@@ -14,7 +14,7 @@ Aplicación para gestionar videos con funcionalidades CRUD y diseño responsivo.
   - Tailwind CSS
 * HTML
 * json-server
-  - Implementación de los métodos GET, POST PUT y DELETE
+  - Implementación de los métodos GET, POST, PUT y DELETE
   - Fetch API
 * Backend
   - https://mockapi.io
